@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Tileset/tileset_general.tres" type="TileSet" id=2]
+[ext_resource path="res://Sprites/Tileset/tileset_pass_through.tres" type="TileSet" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 40, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 8 )
+
+[node name="MainScene" type="Node2D"]
+
+[node name="MapPassThrough" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 131083, 5, 0, 196613, 0, 0, 196619, 10, 0, 196620, 13, 0, 196626, 3, 0, 196627, 3, 0, 262146, 10, 0, 262147, 12, 0, 262148, 11, 0, 262149, 13, 0, 262155, 18, 0, 262156, 20, 0, 262161, 10, 0, 262162, 12, 0, 262163, 11, 0, 262164, 13, 0, 327682, 16, 0, 327683, 21, 0, 327684, 21, 0, 327685, 17, 0, 327688, 2, 0, 327697, 16, 0, 327698, 15, 0, 327699, 21, 0, 327700, 17, 0, 393218, 16, 0, 393219, 21, 0, 393220, 22, 0, 393221, 17, 0, 393223, 23, 0, 393224, 24, 0, 393225, 26, 0, 393232, 4, 0, 393233, 16, 0, 393234, 21, 0, 393235, 21, 0, 393236, 17, 0, 458754, 16, 0, 458755, 21, 0, 458756, 21, 0, 458757, 17, 0, 458758, 8, 0, 458767, 10, 0, 458768, 12, 0, 458769, 11, 0, 458770, 13, 0, 458771, 21, 0, 458772, 17, 0, 458774, 4, 0, 524290, 16, 0, 524291, 15, 0, 524292, 21, 0, 524293, 17, 0, 524294, 7, 0, 524300, 8, 0, 524303, 18, 0, 524304, 19, 0, 524305, 19, 0, 524306, 20, 0, 524307, 15, 0, 524308, 17, 0, 524309, 23, 0, 524310, 26, 0, 589826, 16, 0, 589827, 10, 0, 589828, 11, 0, 589829, 12, 0, 589830, 12, 0, 589831, 13, 0, 589836, 7, 0, 589838, 5, 0, 589841, 16, 0, 589842, 21, 0, 589843, 21, 0, 589844, 17, 0, 655362, 16, 0, 655363, 16, 0, 655364, 21, 0, 655365, 14, 0, 655366, 21, 0, 655367, 17, 0, 655371, 23, 0, 655372, 24, 0, 655373, 25, 0, 655374, 26, 0, 655377, 16, 0, 655378, 14, 0, 655379, 21, 0, 655380, 17, 0, 720898, 16, 0, 720899, 16, 0, 720900, 22, 0, 720901, 21, 0, 720902, 21, 0, 720903, 17, 0, 720904, 2, 0, 720913, 16, 0, 720914, 21, 0, 720915, 21, 0, 720916, 23, 0, 720917, 24, 0, 720918, 26, 0, 786434, 16, 0, 786435, 16, 0, 786436, 21, 0, 786437, 21, 0, 786438, 10, 0, 786439, 11, 0, 786440, 13, 0, 786449, 16, 0, 786450, 21, 0, 786451, 21, 0, 786452, 17, 0, 786455, 6, 0, 851970, 16, 0, 851971, 16, 0, 851972, 21, 0, 851973, 21, 0, 851974, 16, 0, 851975, 21, 0, 851976, 17, 0, 851979, 0, 0, 851980, 2, 0, 851983, 1, 0, 851985, 16, 0, 851986, 21, 0, 851987, 21, 0, 851988, 17, 0, 851990, 2, 0, 851991, 7, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MapPassThrough"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Platform00" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 64, 72 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Platform01" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 136, 104 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform02" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 120, 200 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform03" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 344, 184 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform04" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 272, 120 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Platform05" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 304, 72 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Platform06" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 88, 152 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Platform07" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 192, 56 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="Platform08" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 352, 136 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="Platform09" type="CollisionShape2D" parent="MapPassThrough/StaticBody2D"]
+position = Vector2( 208, 168 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="MapGeneral" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65535, 10, 0, 0, 13, 0, 24, 10, 0, 25, 13, 0, 131071, 16, 0, 65536, 17, 0, 65560, 16, 0, 65561, 17, 0, 196607, 16, 0, 131072, 17, 0, 131096, 16, 0, 131097, 17, 0, 262143, 16, 0, 196608, 17, 0, 196632, 16, 0, 196633, 17, 0, 327679, 16, 0, 262144, 17, 0, 262168, 16, 0, 262169, 17, 0, 393215, 16, 0, 327680, 17, 0, 327704, 16, 0, 327705, 17, 0, 458751, 16, 0, 393216, 17, 0, 393240, 16, 0, 393241, 17, 0, 524287, 16, 0, 458752, 17, 0, 458776, 16, 0, 458777, 17, 0, 589823, 16, 0, 524288, 17, 0, 524312, 16, 0, 524313, 17, 0, 655359, 16, 0, 589824, 17, 0, 589848, 16, 0, 589849, 17, 0, 720895, 16, 0, 655360, 17, 0, 655384, 16, 0, 655385, 17, 0, 786431, 16, 0, 720896, 17, 0, 720920, 18, 0, 720921, 20, 0, 851967, 16, 0, 786432, 17, 0, 917503, 16, 0, 851968, 17, 0, 983039, 16, 0, 917504, 21, 0, 917505, 11, 0, 917506, 12, 0, 917507, 12, 0, 917508, 11, 0, 917509, 11, 0, 917510, 11, 0, 917511, 12, 0, 917512, 12, 0, 917513, 11, 0, 917514, 11, 0, 917515, 11, 0, 917516, 11, 0, 917517, 11, 0, 917518, 12, 0, 917519, 11, 0, 917520, 11, 0, 917521, 11, 0, 917522, 11, 0, 917523, 11, 0, 917524, 12, 0, 917525, 11, 0, 917526, 11, 0, 917527, 11, 0, 917528, 11, 0, 917529, 11, 0, 917530, 11, 0, 917531, 11, 0, 917532, 13, 0, 1048575, 18, 0, 983040, 19, 0, 983041, 19, 0, 983042, 19, 0, 983043, 19, 0, 983044, 19, 0, 983045, 19, 0, 983046, 19, 0, 983047, 19, 0, 983048, 19, 0, 983049, 19, 0, 983050, 19, 0, 983051, 19, 0, 983052, 19, 0, 983053, 19, 0, 983054, 19, 0, 983055, 19, 0, 983056, 19, 0, 983057, 19, 0, 983058, 19, 0, 983059, 19, 0, 983060, 19, 0, 983061, 19, 0, 983062, 19, 0, 983063, 19, 0, 983064, 19, 0, 983065, 19, 0, 983066, 19, 0, 983067, 19, 0, 983068, 20, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 48 )
